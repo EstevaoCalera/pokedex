@@ -1,7 +1,7 @@
 <app-poke-search (emmitSearch)="getSearch($event)"></app-poke-search>
 
 <section class="list">
-  <ng-template ngFor let-pokemon [ngForOf]="filteredPokemons">
+  <ng-template [ngIf]="!isLoading" ngFor let-pokemon [ngForOf]="filteredPokemons">
     <a [routerLink]="['details', pokemon.status.id]" class="pokemon" *ngIf="pokemon.status">
       <section class="pokemon__status">
         <h2>
@@ -20,4 +20,5 @@
       </section>
     </a>
   </ng-template>
+  <app-poke-error *ngIf="apiError"></app-poke-error>
 </section>

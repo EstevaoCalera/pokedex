@@ -10,6 +10,9 @@ export class PokeListComponent implements OnInit {
 
   public allPokemons: any
   public filteredPokemons: any
+  public isLoading: boolean = true
+  public apiError: boolean = false
+
   constructor(
     private pokeApiService: PokeApiService
   ) { }
@@ -18,8 +21,13 @@ export class PokeListComponent implements OnInit {
     this.pokeApiService.apiListAllPokemons.subscribe(
       res => {
         this.allPokemons = res.results
+        this.filteredPokemons = this.allPokemons
+      },
+      (_error): void => {
+        this.apiError = true
       }
     );
+    this.isLoading = false
   }
 
   public getSearch(value: string) {
