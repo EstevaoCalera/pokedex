@@ -9,9 +9,12 @@ export class PokeSearchComponent implements OnInit {
 
   @Output() public emmitSearch: EventEmitter<string> = new EventEmitter()
 
-  constructor() { }
+  constructor() {
+    //do nothing
+  }
 
   ngOnInit(): void {
+    //do nothing
   }
 
   public search(value: string) {

@@ -6,8 +6,6 @@ import { PokeListComponent } from './poke-list/poke-list.component';
 import { RouterModule } from '@angular/router';
 import { PokeErrorComponent } from './poke-error/poke-error.component';
 
-
-
 @NgModule({
   declarations: [
     PokeHeaderComponent,
